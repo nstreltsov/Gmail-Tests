@@ -11,7 +11,7 @@ PASSWORD = 'appline2020'
 def open_gmail():
     options = webdriver.ChromeOptions()
     #options.add_argument('--headless')
-    driver = webdriver.Chrome('chromedriver.exe', chrome_options=options)
+    driver = webdriver.Chrome('chromedriver_linux', chrome_options=options)
     driver.get('https://gmail.com')
     return pages.LoginPage(driver)
 
