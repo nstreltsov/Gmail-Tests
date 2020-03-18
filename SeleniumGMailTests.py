@@ -9,7 +9,12 @@ PASSWORD = 'appline2020'
 
 @allure.step("Открыть Gmail")
 def open_gmail():
-    driver = webdriver.Chrome('chromedriver.exe')
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument("disable-dev-shm-usage");
+    options.add_argument("no-sandbox");
+    options.add_argument("window-size=1024,768");
+    driver = webdriver.Chrome('chromedriver.exe', chrome_options=options)
     driver.get('https://gmail.com')
     return pages.LoginPage(driver)
 
