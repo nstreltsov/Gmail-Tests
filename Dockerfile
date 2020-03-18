@@ -1,5 +1,6 @@
 FROM python:3.7-alpine
 COPY GMailTest.py GMailTest.py
+COPY SeleniumGMailTests.py SeleniumGMailTests.py
 RUN pip install pytest
 RUN pip install allure-pytest
 RUN pip install allure-python-commons
