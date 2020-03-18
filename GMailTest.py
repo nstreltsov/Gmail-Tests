@@ -23,7 +23,7 @@ def test_send_email(to_address, subject, message):
     step_check_message('"Inbox"', subject, message)
     step_check_message('"[Gmail]/Sent Mail"', subject, message)
 
-@allure.step('send message {0} {1}')
+@allure.step('Отправка сообщения {0} {1}')
 def step_send_message(to_address, message):
     smtp = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
     smtp.starttls()
@@ -31,7 +31,7 @@ def step_send_message(to_address, message):
     smtp.sendmail(FROM_ADDRESS, to_address, message)
     smtp.quit()
 
-@allure.step('check message {0} {1} {2}')
+@allure.step('Проверка сообщения {0} {1} {2}')
 def step_check_message(folder, subject, message):
     imap = imaplib.IMAP4_SSL(IMAP_SERVER)
     imap.login(LOGIN, PASSWORD)

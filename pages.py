@@ -68,7 +68,7 @@ class NewMessageDialog:
         self.webdriver = element.parent
         self.wait = WebDriverWait(self.webdriver, 30, 0.5)
 
-    @allure.step("Заполнить сообщение для [{to}] c  темой [{subject}] и телом [{body}]")
+    @allure.step("Заполнить сообщение для {to} c  темой {subject} и сообщением {body}")
     def fill(self, to, subject, body):
         self.element.find_element(By.XPATH, "//form//textarea[@name='to']").send_keys(to)
         self.element.find_element(By.XPATH, "//form//input[@name='subjectbox']").send_keys(subject)
