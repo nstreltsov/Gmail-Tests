@@ -54,7 +54,7 @@ class Message:
     def check_message(self, to_address, subject, message):
         assert to_address in self.wait.until(
             lambda wd: self.webdriver.find_element(By.XPATH,
-                                                   ".//span[@email]/following-sibling::span[text()]")).text
+                                                   ".//h3//span[@email]/following-sibling::span[text()]")).text
         assert subject in self.wait.until(
             lambda wd: self.webdriver.find_element(By.XPATH,
                                                    ".//table//h2[text() and @data-thread-perm-id]")).text
